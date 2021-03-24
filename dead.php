@@ -63,7 +63,6 @@ $arr3 = [
 <form>
 <div>
 <?php
-//echo "<img src='https://i.gifer.com/JrI.gif'>";
 foreach ($arr1 as $waify=>$waify_count) {
     echo  '<pre > Вайфу ' .$waify . ' под номером '. $waify_count  ;
 
