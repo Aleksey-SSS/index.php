@@ -69,7 +69,6 @@ foreach ($arr1 as $waify=>$waify_count) {
 
 
 <div>   <?php   foreach ($arr3 as $kiskis=>$kiskis_count) {
-
     echo  '<pre> Трек кис-кис ' .$kiskis . ' под номером '. $kiskis_count  ;
     ?>
 <?php }?>
