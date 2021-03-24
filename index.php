@@ -25,13 +25,13 @@
         <h1>Authorization</h1>
 
         <span> Login:</span>
-        <input type ="text" name="login" /> <br>
+        <input type ="text" name="login"/> <br>
         <span> Password: </span>
-        <input type ="text" name="password" /> <br>
+        <input type ="text" name="password"/> <br>
         <span> Name: </span>
-        <input type ="text" name="name" /> <br>
+        <input type ="text" name="name"/> <br>
         <span> Surname: </span>
-        <input type ="text" name="surname" /> <br>
+        <input type ="text" name="surname"/> <br>
 
         <button type ="submit">
             Submit
