@@ -75,8 +75,6 @@
             </p>
         <?php endforeach;?>
     <?php endif; ?>
-</div>
-
 
 </body>
 </html>
