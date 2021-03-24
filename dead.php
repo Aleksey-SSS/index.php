@@ -18,7 +18,7 @@ $arr2 = [
     'Дровка' => 3,
     'Тинкер' => 4,
     'Течес' => 5,
-    'Штори' => 6,
+    'Шторм' => 6,
     'ЦМ' => 7,
     'Дазл' => 8,
     'Магнус' => 9,
@@ -49,29 +49,32 @@ $arr3 = [
     <title>Document</title>
 </head>
 <body>
+
+
 <div>
 <?php
-
-
 foreach ($arr1 as $waify=>$waify_count) {
     echo  '<pre> Вайфу ' .$waify . ' под номером '. $waify_count  ;
-
     ?>
 <?php }?>
 </div> <br>
+
+
 <div> <?php
     foreach ($arr2 as $dota=>$dota_count) {
-
         echo  '<pre> Персонаж ' .$dota . ' под номером '. $dota_count  ;
     ?>
     <?php }?>
   </div>  <br>
+
+
 <div>   <?php   foreach ($arr3 as $kiskis=>$kiskis_count) {
 
     echo  '<pre> Трек кис-кис ' .$kiskis . ' под номером '. $kiskis_count  ;
     ?>
-
 <?php }?>
 </div>  <br>
+
+
 </body>
 </html>
