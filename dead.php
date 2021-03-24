@@ -47,14 +47,26 @@ $arr3 = [
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <meta charset="utf-8">
+    <title>Фон</title>
+    <style>
+        body {
+            background: #0000FF url(https://static2.aniimg.com/upload/20170527/602/e/j/v/ejvFEF.jpg); /* Цвет фона и путь к файлу */
+            color: #FFFFFF; /* Цвет текста */
+        }
+    </style>
 </head>
 <body>
 
 
+<form>
 <div>
 <?php
+//echo "<img src='https://i.gifer.com/JrI.gif'>";
 foreach ($arr1 as $waify=>$waify_count) {
-    echo  '<pre> Вайфу ' .$waify . ' под номером '. $waify_count  ;
+    echo  '<pre > Вайфу ' .$waify . ' под номером '. $waify_count  ;
+
     ?>
 <?php }?>
 </div> <br>
@@ -70,10 +82,12 @@ foreach ($arr1 as $waify=>$waify_count) {
 
 <div>   <?php   foreach ($arr3 as $kiskis=>$kiskis_count) {
     echo  '<pre> Трек кис-кис ' .$kiskis . ' под номером '. $kiskis_count  ;
+
     ?>
+
 <?php }?>
 </div>  <br>
-
+</form>
 
 </body>
 </html>
