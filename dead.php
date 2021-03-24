@@ -48,7 +48,7 @@ $arr3 = [
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <meta charset="utf-8">
+
     <title>Фон</title>
     <style>
         body {
