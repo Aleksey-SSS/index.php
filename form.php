@@ -2,20 +2,20 @@
 
 function valid (array $post) : array {
     $validate=[
- 'error'=>false,
-    'success' =>false,
+        'error'=>false,
+        'success' =>false,
         'messages'=>[],
 
     ];
 
     if (!empty($post['login']) && !empty($post['password'])){
 
-$login = trim($post ['login']);
+        $login = trim($post ['login']);
         $password = trim($post ['password']);
 
 
         $constraints= [
-                'login' => 6,
+            'login' => 6,
             'password'=>3,
         ];
 
@@ -23,7 +23,7 @@ $login = trim($post ['login']);
 
 
 
-        if (!$validateForm['Login']) {
+        if (!$validateForm['login']) {
 
 
             $validate['error'] = true;
@@ -43,8 +43,6 @@ $login = trim($post ['login']);
         }
 
         if (!$validate['error']){
-
-
                 $validate['success'] = true;
                 array_push(
                         $validate['messages']
@@ -53,4 +51,23 @@ $login = trim($post ['login']);
         return $validate;
     }
     return $validate;
+}
+function validLoginAndPassword(string $login, string $password, array $constraints):array{
+    $validateForm=[
+
+        'login'=>true,
+        'password' => true,
+    ];
+    if (strlen($login)<$constraints['login']){
+
+        $validateForm['login'] = false;
+
+    }
+    if (strlen($password)<$constraints['password']){
+        $validateForm['password']=false;
+
+    }
+return $validateForm;
+
+
 }
