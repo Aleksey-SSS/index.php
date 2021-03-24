@@ -20,23 +20,41 @@
 
 </head>
 <body>
-<div class="reg-form">
-    <form action="./" method="post">
-        <h1>Authorization</h1>
+<div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
+    <form action="./" method="post" style="float:left;">
+        <!— <h1>Authorization</h1>
+        <div style="clear:both; text-align:right; padding:">
+            <span style="float: left"> Login:</span>
+            <input type ="text" name="login" /> <br>
+        </div>
 
-        <span> Login:</span>
-        <input type ="text" name="login"/> <br>
-        <span> Password: </span>
-        <input type ="text" name="password"/> <br>
-        <span> Name: </span>
-        <input type ="text" name="name"/> <br>
-        <span> Surname: </span>
-        <input type ="text" name="surname"/> <br>
 
-        <button type ="submit">
-            Submit
-        </button>
+        <div style="clear:both; text-align:right;">
+            <span style="float: left"> Password: </span>
+            <input type ="text" name="password" /> <br>
+        </div>
+
+        <div style="clear:both; text-align:right;">
+            <span style="float: left"> Name: </span>
+            <input type ="text" name="name" /> <br>
+        </div>
+
+        <div style="clear:both; text-align:right;">
+            <span style="float: left"> Surname: </span>
+            <input type ="text" name="surname" /> <br>
+        </div>
+
+
+        <div style="clear:both; text-align:center;">
+            <button type ="submit" style="clear:both; text-align:center;">
+                Submit
+            </button>
+        </div>
+
     </form>
+
+</div>
+
     <?php $validate = valid($_POST) ?>
 
     <?php if (!empty($validate['error']) && $validate['error']):?>
