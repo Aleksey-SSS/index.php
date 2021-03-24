@@ -45,7 +45,8 @@ function valid (array $post) : array {
         if (!$validate['error']){
                 $validate['success'] = true;
                 array_push(
-                        $validate['messages']
+                        $validate['messages'],
+                    "Login {$login} and Password {$password} passed verification successfully"
                 );
         }
         return $validate;

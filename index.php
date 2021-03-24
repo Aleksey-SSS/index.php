@@ -26,7 +26,7 @@
     <?php if (!empty($validate['error']) && $validate['error']):?>
         <?php foreach ($validate['messages'] as $message): ?>
             <p style ="color: red">
-                <?=$message;?>
+                <?=$message?>
             </p>
         <?php endforeach;?>
     <?php endif;?>
@@ -34,9 +34,10 @@
 
 
     <?php if (!empty($validate['success']) && $validate['success']):?>
+
         <?php foreach ($validate['messages'] as $message): ?>
             <p style ="color: green">
-                <?=$message;?>
+                <?=$message?>
             </p>
         <?php endforeach;?>
     <?php endif; ?>
