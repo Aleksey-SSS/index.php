@@ -22,32 +22,32 @@
 <body>
 <div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
     <form action="./" method="post" style="float:left;">
-        <!— <h1>Authorization</h1>
+        <!— <h1>Авторизация</h1>
         <div style="clear:both; text-align:right; padding:">
-            <span style="float: left"> Login:</span>
+            <span style="float: left"> Логин:</span>
             <input type ="text" name="login" /> <br>
         </div>
 
 
         <div style="clear:both; text-align:right;">
-            <span style="float: left"> Password: </span>
-            <input type ="text" name="password" /> <br>
+            <span style="float: left"> Пароль: </span>
+            <input type ="password" name="password" /> <br>
         </div>
 
         <div style="clear:both; text-align:right;">
-            <span style="float: left"> Name: </span>
+            <span style="float: left"> Имя: </span>
             <input type ="text" name="name" /> <br>
         </div>
 
         <div style="clear:both; text-align:right;">
-            <span style="float: left"> Surname: </span>
+            <span style="float: left"> Фамилия: </span>
             <input type ="text" name="surname" /> <br>
         </div>
 
 
         <div style="clear:both; text-align:center;">
             <button type ="submit" style="clear:both; text-align:center;">
-                Submit
+                Ввести
             </button>
         </div>
 
