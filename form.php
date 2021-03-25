@@ -8,10 +8,12 @@ function valid (array $post) : array {
 
     ];
 
-    if (!empty($post['login']) && !empty($post['password'])){
+    if (!empty($post['login']) && !empty($post['password']) && !empty($post['name']) &&  !empty($post['surname'])){
 
         $login = trim($post ['login']);
         $password = trim($post ['password']);
+        $name = trim($post['name']);
+        $surname = trim($post['surname']);
 
 
         $constraints= [
@@ -19,7 +21,7 @@ function valid (array $post) : array {
             'password'=>3,
         ];
 
-        $validateForm=validLoginAndPassword($login, $password, $constraints);
+        $validateForm=validLoginAndPassword($login, $password, $constraints, $name, $surname);
 
 
 
@@ -28,7 +30,7 @@ function valid (array $post) : array {
 
             $validate['error'] = true;
             array_push( $validate ['messages'],
-            "Логин должен содержать больше 6 символов "
+            "Логин должен содержать больше 6 символов"
             );
         }
 
@@ -38,7 +40,26 @@ function valid (array $post) : array {
 
             $validate['error'] = true;
             array_push( $validate ['messages'],
-                "Пароль должен содержать больше 3 символов "
+                "Пароль должен содержать больше 3 символов"
+            );
+
+
+        }
+        if (!$validateForm['name']){
+
+
+            $validate['error'] = true;
+            array_push( $validate ['messages'],
+                " Имя {$name} некорректно, имя не должно содержать в себе цифры"
+            );
+        }
+
+        if (!$validateForm['surname']){
+
+
+            $validate['error'] = true;
+            array_push( $validate ['messages'],
+                " Фамилия {$surname} некорректно, фамилия не должна содержать в себе цифры"
             );
         }
 
@@ -46,18 +67,20 @@ function valid (array $post) : array {
                 $validate['success'] = true;
                 array_push(
                         $validate['messages'],
-                    "Login {$login} and Password {$password} passed verification successfully"
+                    "Вы успешно прошли валидацию <br>  Ваш логин: {$login}  <br>  Ваш пароль: {$password}  <br> Ваше имя : {$name} <br> Ваша фамилия : {$surname}"
                 );
         }
         return $validate;
     }
     return $validate;
 }
-function validLoginAndPassword(string $login, string $password, array $constraints):array{
+function validLoginAndPassword(string $login, string $password, array $constraints, string $name, string $surname):array{
     $validateForm=[
 
         'login'=>true,
         'password' => true,
+       'name' => true,
+        'surname' =>true,
     ];
     if (strlen($login)<$constraints['login']){
 
@@ -68,7 +91,18 @@ function validLoginAndPassword(string $login, string $password, array $constrain
         $validateForm['password']=false;
 
     }
-return $validateForm;
+
+    if (preg_match("/[0-9]/", $name))
+    {
+        $validateForm['name'] = false;
+    }
+
+    if (preg_match("/[0-9]/", $surname))
+    {
+        $validateForm['surname'] = false;
+    }
+
+    return $validateForm;
 
 
 }
