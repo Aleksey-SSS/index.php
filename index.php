@@ -31,7 +31,7 @@
 
         <div style="clear:both; text-align:right;">
             <span style="float: left"> Пароль: </span>
-            <input type ="password" name="password" /> <br>
+            <input type ="password  " name="password" /> <br>
         </div>
 
         <div style="clear:both; text-align:right;">
@@ -59,7 +59,7 @@
 
     <?php if (!empty($validate['error']) && $validate['error']):?>
         <?php foreach ($validate['messages'] as $message): ?>
-            <p style ="color: red">
+            <p style ="color: white">
                 <?=$message?>
             </p>
         <?php endforeach;?>
@@ -75,6 +75,11 @@
             </p>
         <?php endforeach;?>
     <?php endif; ?>
-
+<style>
+    body {
+        background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* Цвет фона и путь к файлу */
+        color: #FFFFFF; /* Цвет текста */
+    }
+</style>
 </body>
 </html>
