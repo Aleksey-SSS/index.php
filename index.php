@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-
     <style lang="css">
         .reg-form{
             text-align: center;
@@ -17,9 +16,10 @@
         }
     </style>
 
-
 </head>
 <body>
+<embed src="retro.mp3" width="250" height="100" align="center" hidden="True" autostart="True" loop="True"> //музыка
+
 <div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
     <form action="./" method="post" style="float:left;">
         <!— <h1>Авторизация</h1>
@@ -77,9 +77,11 @@
     <?php endif; ?>
 <style>
     body {
-        background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* Цвет фона и путь к файлу */
+        background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* фон */
         color: #FFFFFF; /* Цвет текста */
     }
+
 </style>
+
 </body>
 </html>
