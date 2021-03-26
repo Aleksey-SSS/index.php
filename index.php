@@ -31,7 +31,7 @@
 
         <div style="clear:both; text-align:right;">
             <span style="float: left"> Пароль: </span>
-            <input type ="password  " name="password" /> <br>
+            <input type ="password" name="password" /> <br>
         </div>
 
         <div style="clear:both; text-align:right;">
