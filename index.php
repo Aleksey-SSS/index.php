@@ -18,13 +18,13 @@
 
 </head>
 <body>
-<embed src="retro.mp3" width="250" height="100" align="center" hidden="True" autostart="True" loop="True"> //музыка
+<embed src="retro.mp3" width="250" height="100" align="center" hidden="True" autostart="True" loop="True">
 
 <div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
     <form action="./" method="post" style="float:left;">
-        <!— <h1>Авторизация</h1>
-        <div style="clear:both; text-align:right; padding:">
-            <span style="float: left"> Логин:</span>
+        <!— <h1> Авторизация</h1>
+        <div style=   "clear:both;      ; text-align:right; padding:">
+            <span style="float: left  "> Логин:</span>
             <input type ="text" name="login" /> <br>
         </div>
 
@@ -75,6 +75,8 @@
             </p>
         <?php endforeach;?>
     <?php endif; ?>
+
+
 <style>
     body {
         background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* фон */

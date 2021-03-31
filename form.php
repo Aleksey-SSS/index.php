@@ -7,6 +7,8 @@ function valid (array $post) : array {
         'messages'=>[],
     ];
 
+
+
     if (!empty($post['login']) && !empty($post['password']) && !empty($post['name']) &&  !empty($post['surname'])){
 
         $login = trim($post ['login']);
@@ -55,10 +57,18 @@ function valid (array $post) : array {
                     "Вы успешно прошли валидацию <br>  Ваш логин: {$login}  <br>  Ваш пароль: {$password}  <br> Ваше имя : {$name} <br> Ваша фамилия : {$surname}"
                 );
         }
+
+
+
         return $validate;
     }
+
     return $validate;
+
 }
+
+
+
 function validLoginAndPassword(string $login, string $password, array $constraints, string $name, string $surname):array{
     $validateForm=[
 
@@ -81,5 +91,6 @@ function validLoginAndPassword(string $login, string $password, array $constrain
     {
         $validateForm['surname'] = false;
     }
+
     return $validateForm;
 }
