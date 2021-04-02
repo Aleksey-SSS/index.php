@@ -94,3 +94,4 @@ function validLoginAndPassword(string $login, string $password, array $constrain
 
     return $validateForm;
 }
+
