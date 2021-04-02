@@ -91,7 +91,6 @@ function validLoginAndPassword(string $login, string $password, array $constrain
     {
         $validateForm['surname'] = false;
     }
-
     return $validateForm;
 }
 
