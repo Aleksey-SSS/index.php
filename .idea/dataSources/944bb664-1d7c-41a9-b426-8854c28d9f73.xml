@@ -926,81 +926,85 @@ APPLICATION_PASSWORD_ADMIN,SERVICE_CONNECTION_ADMIN!
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <index id="289" parent="282" name="id">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="290" parent="282" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="291" parent="282" name="id">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id</UnderlyingIndexName>
-    </key>
-    <column id="292" parent="283" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="293" parent="283" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="294" parent="283" name="last_name">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="295" parent="283" name="email">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="296" parent="283" name="work_id">
+    <column id="289" parent="282" name="user_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <index id="297" parent="283" name="id">
+    <index id="290" parent="282" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="298" parent="283" name="PRIMARY">
+    <key id="291" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="299" parent="283" name="id">
+    <key id="292" parent="282" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="300" parent="284" name="id">
+    <column id="293" parent="283" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="301" parent="284" name="name">
+    <column id="294" parent="283" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="302" parent="284" name="status">
+    <column id="295" parent="283" name="last_name">
       <Position>3</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="303" parent="284" name="id">
+    <column id="296" parent="283" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="297" parent="283" name="work_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="298" parent="283" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="304" parent="284" name="PRIMARY">
+    <key id="299" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="305" parent="284" name="id">
+    <key id="300" parent="283" name="id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id</UnderlyingIndexName>
+    </key>
+    <column id="301" parent="284" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="302" parent="284" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="303" parent="284" name="status">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0s</DataType>
+    </column>
+    <index id="304" parent="284" name="id">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="305" parent="284" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="306" parent="284" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
