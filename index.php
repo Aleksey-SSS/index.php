@@ -62,7 +62,6 @@
     <?php endforeach; ?>
 <?php endif;?>
 
-
 <?php if (!empty($validate['success']) and $validate['success']):?>
     <?php q($_POST) ?>
     <?php foreach (getUsers() as $user):?>
