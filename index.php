@@ -65,7 +65,7 @@
 <?php if (!empty($validate['success']) and $validate['success']):?>
     <?php q($_POST) ?>
     <?php foreach (getUsers() as $user):?>
-<div  style="clear:both; text-align:center; font-size: 23px;">
+<div  style="clear:both; text-align:center;  font-weight:bold ; font-size: 23px;">
             <?= $user ['name']?> <?= $user ['last_name']?> <?= $user ['email']?> <?= $user ['age']?>
 </div>
     <?php endforeach;?>
