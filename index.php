@@ -39,14 +39,10 @@
             <input type ="text" name="email" /> <br>
         </div>
 
-
         <div style="clear:both; text-align:right;">
             <span style="float: left"> Age: </span>
             <input type ="text" name="age" /> <br>
         </div>
-
-
-
 
         <div style="clear:both; text-align:center;">
             <button type ="submit" style="clear:both; text-align:center;">
@@ -58,8 +54,6 @@
 
 </div>
 <?php $validate = valid($_POST)?>
-<?php if (!empty($validate['error']) and !$validate['error'])
-    q($_POST)?>
 <?php if (!empty($validate['error']) and $validate['error']): ?>
     <?php foreach ($validate['messages'] as $message): ?>
         <p style="color: red">
@@ -67,25 +61,23 @@
         </p>
     <?php endforeach; ?>
 <?php endif;?>
+
+
 <?php if (!empty($validate['success']) and $validate['success']):?>
+    <?php q($_POST) ?>
     <?php foreach (getUsers() as $user):?>
-        <footer>
-
+<div  style="clear:both; text-align:center; font-size: 23px;">
             <?= $user ['name']?> <?= $user ['last_name']?> <?= $user ['email']?> <?= $user ['age']?>
-
-        </footer>
+</div>
     <?php endforeach;?>
 <?php endif;?>
-
 
 <style>
     body {
         background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* фон */
         color: #FFFFFF; /* Цвет текста */
     }
-
 </style>
-
 </body>
 </html>
 

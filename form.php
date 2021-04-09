@@ -9,7 +9,6 @@ $password = '123456789';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
-
     function getUsers(): array
     {
         global $conn;
@@ -41,7 +40,6 @@ function valid (array $post) : array {
         $last_name = trim($post ['last_name']);
         $email = trim($post['email']);
         $age = trim($post['age']);
-
 
         $constraints= [
             'age' => 18 ,
