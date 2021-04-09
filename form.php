@@ -43,7 +43,7 @@ function valid (array $post) : array {
 
         $constraints= [
             'age' => 18 ,
-            'email' =>4,
+            'email' =>7,
         ];
 
         $validateForm=validLoginAndPassword($name, $last_name, $constraints, $email, $age);
@@ -57,20 +57,20 @@ function valid (array $post) : array {
         if (!$validateForm['last_name']){
             $validate['error'] = true;
             array_push( $validate ['messages'],
-                " Фамилия {$last_name} некорректно, фамилия не должна содержать в себе цифры"
+                    " Фамилия {$last_name} некорректно, фамилия не должна содержать в себе цифры"
             );
 
         }
         if (!$validateForm['email']) {
             $validate['error'] = true;
             array_push( $validate ['messages'],
-                "Почта должна превышать 4 символа"
+                "Email должен содержать больше 7 символов"
             );
         }
         if (!$validateForm['age']) {
             $validate['error'] = true;
             array_push( $validate ['messages'],
-                "Возраст не должен превышать 3 символа"
+                "Вам должно быть больше 18 лет"
             );
         }
         if (!$validate['error']){
