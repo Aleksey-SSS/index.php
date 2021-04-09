@@ -966,45 +966,50 @@ APPLICATION_PASSWORD_ADMIN,SERVICE_CONNECTION_ADMIN!
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <index id="298" parent="283" name="id">
+    <column id="298" parent="283" name="age">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="299" parent="283" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="299" parent="283" name="PRIMARY">
+    <key id="300" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="300" parent="283" name="id">
+    <key id="301" parent="283" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="301" parent="284" name="id">
+    <column id="302" parent="284" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="302" parent="284" name="name">
+    <column id="303" parent="284" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="303" parent="284" name="status">
+    <column id="304" parent="284" name="status">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
     </column>
-    <index id="304" parent="284" name="id">
+    <index id="305" parent="284" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="305" parent="284" name="PRIMARY">
+    <key id="306" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="306" parent="284" name="id">
+    <key id="307" parent="284" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>

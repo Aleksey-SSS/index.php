@@ -23,16 +23,6 @@
 <div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
     <form action="./" method="post" style="float:left;">
         <!— <h1> Авторизация</h1>
-        <div style=   "clear:both;      ; text-align:right; padding:">
-            <span style="float: left  "> Логин:</span>
-            <input type ="text" name="login" /> <br>
-        </div>
-
-
-        <div style="clear:both; text-align:right;">
-            <span style="float: left"> Пароль: </span>
-            <input type ="password" name="password" /> <br>
-        </div>
 
         <div style="clear:both; text-align:right;">
             <span style="float: left"> Имя: </span>
@@ -41,8 +31,21 @@
 
         <div style="clear:both; text-align:right;">
             <span style="float: left"> Фамилия: </span>
-            <input type ="text" name="surname" /> <br>
+            <input type ="text" name="last_name" /> <br>
         </div>
+
+        <div style=   "clear:both;      ; text-align:right; padding:">
+            <span style="float: left  "> Email:</span>
+            <input type ="text" name="email" /> <br>
+        </div>
+
+
+        <div style="clear:both; text-align:right;">
+            <span style="float: left"> Age: </span>
+            <input type ="text" name="age" /> <br>
+        </div>
+
+
 
 
         <div style="clear:both; text-align:center;">
@@ -55,26 +58,22 @@
 
 </div>
 
-    <?php $validate = valid($_POST) ?>
-
-    <?php if (!empty($validate['error']) && $validate['error']):?>
-        <?php foreach ($validate['messages'] as $message): ?>
-            <p style ="color: white">
-                <?=$message?>
-            </p>
-        <?php endforeach;?>
-    <?php endif;?>
-
-
-
-    <?php if (!empty($validate['success']) && $validate['success']):?>
-
-        <?php foreach ($validate['messages'] as $message): ?>
-            <p style ="color: green">
-                <?=$message?>
-            </p>
-        <?php endforeach;?>
-    <?php endif; ?>
+<?php q($_POST)?>
+<?php $validate = valid($_POST)?>
+<?php if (!empty($validate['error']) and $validate['error']): ?>
+    <?php foreach ($validate['messages'] as $message): ?>
+        <p style="color: red">
+            <?= $message ?>
+        </p>
+    <?php endforeach; ?>
+<?php endif;?>
+<?php if (!empty($validate['success']) and $validate['success']):?>
+    <?php foreach (getUsers() as $user):?>
+        <div>
+            <?= $user ['name']?> <?= $user ['last_name']?> <?= $user ['email']?> <?= $user ['age']?>
+        </div>
+    <?php endforeach;?>
+<?php endif;?>
 
 
 <style>
