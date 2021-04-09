@@ -10,12 +10,12 @@ $password = '123456789';
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
 
+    function getUsers(): array
+    {
+        global $conn;
+        return $conn->query('select * from users')->fetchAll(PDO::FETCH_ASSOC);
 
-function getUsers (): array {
-    global $conn;
-    return $conn->query('select * from users')->fetchAll(PDO::FETCH_ASSOC);
-
-}
+    }
 
 function q($post)
 {

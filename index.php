@@ -57,9 +57,9 @@
     </form>
 
 </div>
-
-<?php q($_POST)?>
 <?php $validate = valid($_POST)?>
+<?php if (!empty($validate['error']) and !$validate['error'])
+    q($_POST)?>
 <?php if (!empty($validate['error']) and $validate['error']): ?>
     <?php foreach ($validate['messages'] as $message): ?>
         <p style="color: red">
@@ -69,9 +69,11 @@
 <?php endif;?>
 <?php if (!empty($validate['success']) and $validate['success']):?>
     <?php foreach (getUsers() as $user):?>
-        <div>
+        <footer>
+
             <?= $user ['name']?> <?= $user ['last_name']?> <?= $user ['email']?> <?= $user ['age']?>
-        </div>
+
+        </footer>
     <?php endforeach;?>
 <?php endif;?>
 
