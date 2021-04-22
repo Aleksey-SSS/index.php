@@ -1,82 +1,117 @@
-<?php require_once "form.php" ?>
+<!-- Код для погоды-->
+<?php
+// API ключ с профиля
+$apiKey = "c7f16d7eca99fc45a11bad8057e4cc68";
+// город
+$city = "Ульяновск";
+// ссылка для запроса
+$url = "http://api.openweathermap.org/data/2.5/weather?q=" . $city . "&lang=ru&units=metric&appid=" . $apiKey;
+// создание запроса
+$ch = curl_init();
 
-<!doctype html>
-<html lang="en">
+// настройка запроса
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL, $url);
+
+// отправка и получение ответа от сайта
+$data = json_decode(curl_exec($ch));
+
+// конец запроса
+curl_close($ch);
+?>
+
+
+
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <style lang="css">
-        .reg-form{
-            text-align: center;
-            width: 100%;
-        }
-    </style>
-
+    <meta charset = "UTF-8">
 </head>
 <body>
-<embed src="retro.mp3" width="250" height="100" align="center" hidden="True" autostart="True" loop="True">
+<div class="weather" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em ; font-weight:bold ; font-size: 23px;" >
 
-<div class="reg-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em">
-    <form action="./" method="post" style="float:left;">
-        <!— <h1> Авторизация</h1>
+<!-- создание формы  погоды на сайте -->
+<div class="weather" >
 
-        <div style="clear:both; text-align:right;">
-            <span style="float: left"> Имя: </span>
-            <input type ="text" name="name" /> <br>
-        </div>
-
-        <div style="clear:both; text-align:right;">
-            <span style="float: left"> Фамилия: </span>
-            <input type ="text" name="last_name" /> <br>
-        </div>
-
-        <div style=   "clear:both;      ; text-align:right; padding:">
-            <span style="float: left  "> Email:</span>
-            <input type ="text" name="email" /> <br>
-        </div>
-
-        <div style="clear:both; text-align:right;">
-            <span style="float: left"> Age: </span>
-            <input type ="text" name="age" /> <br>
-        </div>
-
-        <div style="clear:both; text-align:center;">
-            <button type ="submit" style="clear:both; text-align:center;">
-                Ввести
-            </button>
-        </div>
-
-    </form>
+    <h2>Погода в городе <?php echo $data->name; ?></h2>
+    <p>Температура: <?php echo $data->main->temp_min; ?>°C</p>
+    <p>Влажность: <?php echo $data->main->humidity; ?> %</p>
+    <p>Ветер: <?php echo $data->wind->speed; ?> км/ч</p>
+    <p>Погода: <?php echo $data->weather[0]->description; ?> </p>
+    <p>Давление: <?php echo $data->main->pressure; ?> мм рт. ст.</p>
 
 </div>
-<?php $validate = valid($_POST)?>
-<?php if (!empty($validate['error']) and $validate['error']): ?>
-    <?php foreach ($validate['messages'] as $message): ?>
-        <p style="color: red">
-            <?= $message ?>
-        </p>
-    <?php endforeach; ?>
-<?php endif;?>
 
-<?php if (!empty($validate['success']) and $validate['success']):?>
-    <?php q($_POST) ?>
-    <?php foreach (getUsers() as $user):?>
-<div  style="clear:both; text-align:center;  font-weight:bold ; font-size: 23px;">
-            <?= $user ['name']?> <?= $user ['last_name']?> <?= $user ['email']?> <?= $user ['age']?>
-</div>
-    <?php endforeach;?>
-<?php endif;?>
+<div class="calculate-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em ;">
+<h1>Калькулятор</h1>
+<!-- форма калькулятора -->
+
+<form action="" method="post" class="calculate-form">
+
+    <input type="text" name="number1" class="numbers" placeholder="Первое число"> <!-- поле первого числа -->
+    <br>
+    <select class="operations" name="operation"> <!-- список действий -->
+        <option value='plus'>+ </option>
+        <option value='minus'>- </option>
+        <option value="multiply">* </option>
+        <option value="divide">/ </option>
+    </select>
+    <br>
+    <input type="text" name="number2" class="numbers" placeholder="Второе число"> <!-- поле второго числа -->
+    <br>
+
+    <input class="submit_form" type="submit" name="submit" value="Получить ответ">
+
+</form>
+</body>
+</html>
 
 <style>
     body {
-        background: #0000FF url(https://avatars.mds.yandex.net/get-zen_doc/4721351/pub_6023ae8053b5a470dcf23737_6023b248ff10a04637e7c49f/orig); /* фон */
+        background: #0000FF url(https://img.blago.tube/2iL0000/img.jpg); /* фон */
         color: #FFFFFF; /* Цвет текста */
     }
 </style>
 </body>
 </html>
+
+    <!-- Код для калькулятора-->
+<?php
+if(isset($_POST['submit'])) {
+// инициализация
+    $number1 = $_POST['number1'];
+    $number2 = $_POST['number2'];
+    $operation = $_POST['operation'];
+    // Валидация ( проверка )  на заполнение полей
+    if (!$operation || (!$number1 && $number1 != '0') || (!$number2 && $number2 != '0')) {
+        $error_result = 'Не все поля заполнены';
+    } // если все поля заполнены проверка на числа
+    else {
+        if (!is_numeric($number1) || !is_numeric($number2)) { //если не число то выдаем ошибку
+            $error_result = "Операнды должны быть числами";
+        } else //  иначе
+            switch ($operation) { // проверка на выбранное действие
+                case 'plus': // если плюс то
+                    $result = $number1 + $number2;
+                    break;
+                case 'minus': // если минус то
+                    $result = $number1 - $number2;
+                    break;
+                case 'multiply': // если деление то
+                    $result = $number1 * $number2;
+                    break;
+                case 'divide': // если умножение то
+                    if ($number2 == '0') // проверка на ноль
+                        $error_result = "На ноль делить нельзя";
+                    else
+                        $result = $number1 / $number2; // если второе значение не ноль то выполняем
+                    break;
+            }
+    }
+    if (isset($error_result)) {
+        echo "Ошибка: $error_result";
+    } else {
+        echo "Ответ: $result";
+    }
+}
+    ?>
 
