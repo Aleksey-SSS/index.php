@@ -18,9 +18,10 @@ $data = json_decode(curl_exec($ch));
 
 // конец запроса
 curl_close($ch);
+
 ?>
 
-
+<h1> Текущее время : <?=date("H:i")?></h1>   <!-- Виджет времени-->
 
 <html lang="ru">
 <head>
@@ -29,39 +30,39 @@ curl_close($ch);
 <body>
 <div class="weather" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em ; font-weight:bold ; font-size: 23px;" >
 
-<!-- создание формы  погоды на сайте -->
-<div class="weather" >
+    <!-- создание формы  погоды на сайте -->
+    <div class="weather" >
 
-    <h2>Погода в городе <?php echo $data->name; ?></h2>
-    <p>Температура: <?php echo $data->main->temp_min; ?>°C</p>
-    <p>Влажность: <?php echo $data->main->humidity; ?> %</p>
-    <p>Ветер: <?php echo $data->wind->speed; ?> км/ч</p>
-    <p>Погода: <?php echo $data->weather[0]->description; ?> </p>
-    <p>Давление: <?php echo $data->main->pressure; ?> мм рт. ст.</p>
+        <h2>Погода в городе <?php echo $data->name; ?></h2>
+        <p>Температура: <?php echo $data->main->temp_min; ?>°C</p>
+        <p>Влажность: <?php echo $data->main->humidity; ?> %</p>
+        <p>Ветер: <?php echo $data->wind->speed; ?> км/ч</p>
+        <p>Погода: <?php echo $data->weather[0]->description; ?> </p>
+        <p>Давление: <?php echo $data->main->pressure; ?> мм рт. ст.</p>
 
-</div>
+    </div>
 
-<div class="calculate-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em ;">
-<h1>Калькулятор</h1>
-<!-- форма калькулятора -->
+    <div class="calculate-form" style="text-align: center;margin-left: auto;margin-right: auto;width: 20em ;">
+        <h1>Калькулятор</h1>
+        <!-- форма калькулятора -->
 
-<form action="" method="post" class="calculate-form">
+        <form action="" method="post" class="calculate-form">
 
-    <input type="text" name="number1" class="numbers" placeholder="Первое число"> <!-- поле первого числа -->
-    <br>
-    <select class="operations" name="operation"> <!-- список действий -->
-        <option value='plus'>+ </option>
-        <option value='minus'>- </option>
-        <option value="multiply">* </option>
-        <option value="divide">/ </option>
-    </select>
-    <br>
-    <input type="text" name="number2" class="numbers" placeholder="Второе число"> <!-- поле второго числа -->
-    <br>
+            <input type="text" name="number1" class="numbers" placeholder="Первое число"> <!-- поле первого числа -->
+            <br>
+            <select class="operations" name="operation"> <!-- список действий -->
+                <option value='plus'>+ </option>
+                <option value='minus'>- </option>
+                <option value="multiply">* </option>
+                <option value="divide">/ </option>
+            </select>
+            <br>
+            <input type="text" name="number2" class="numbers" placeholder="Второе число"> <!-- поле второго числа -->
+            <br>
 
-    <input class="submit_form" type="submit" name="submit" value="Получить ответ">
+            <input class="submit_form" type="submit" name="submit" value="Получить ответ">
 
-</form>
+        </form>
 </body>
 </html>
 
@@ -74,7 +75,7 @@ curl_close($ch);
 </body>
 </html>
 
-    <!-- Код для калькулятора-->
+<!-- Код для калькулятора-->
 <?php
 if(isset($_POST['submit'])) {
 // инициализация
@@ -113,5 +114,4 @@ if(isset($_POST['submit'])) {
         echo "Ответ: $result";
     }
 }
-    ?>
-
+?>
